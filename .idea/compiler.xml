@@ -6,8 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Leipin-api" />
         <module name="Liepin-common" />
+        <module name="service-user-7001" />
+        <module name="Liepin-pojo" />
+        <module name="service-company-6001" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="service-user" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

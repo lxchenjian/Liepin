@@ -8,7 +8,18 @@
     <artifactId>Liepin</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <!--
+            Liepin-common: 通用工程、工具类、枚举类、异常类、常用属性类、资源类等等
+            Liepin-pojo: 所有实体类的管理，pojo、bean、entry、bo、vo、dto等
+            Liepin-api: web接口(应用)的公用依赖
+            service-user-7001: 用户微服务(7001)
+            service-company-6001: 企业微服务(6001)
+        -->
         <module>Liepin-common</module>
+        <module>Liepin-pojo</module>
+        <module>Leipin-api</module>
+        <module>service-user-7001</module>
+        <module>service-company-6001</module>
     </modules>
 
     <!-- 打包方式: 1、jar(默认)
