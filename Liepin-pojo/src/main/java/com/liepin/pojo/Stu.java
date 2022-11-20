@@ -1,10 +1,9 @@
-package com.imooc.pojo;
-
+package com.liepin.pojo;
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 风间影月

@@ -3,7 +3,7 @@ package com.liepin.controller;
 import com.imooc.grace.result.GraceJSONResult;
 import com.imooc.grace.result.IMOOCJSONResult;
 import com.imooc.grace.result.ResponseStatusEnum;
-import com.imooc.pojo.test.Stu;
+import com.liepin.pojo.test.Stu;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

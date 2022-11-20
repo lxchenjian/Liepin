@@ -20,6 +20,7 @@
         <module>Leipin-api</module>
         <module>service-user-7001</module>
         <module>service-company-6001</module>
+        <module>mybatis-plus-generator-for-imooc</module>
     </modules>
 
     <!-- 打包方式: 1、jar(默认)

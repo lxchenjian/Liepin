@@ -1,5 +1,4 @@
-package com.imooc.pojo.test;
-
+package com.liepin.pojo.test;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

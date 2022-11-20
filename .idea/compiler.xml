@@ -10,6 +10,7 @@
         <module name="Leipin-api" />
         <module name="Liepin-common" />
         <module name="service-user-7001" />
+        <module name="mybatis-plus-generator-for-imooc" />
         <module name="Liepin-pojo" />
         <module name="service-company-6001" />
       </profile>
