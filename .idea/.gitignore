@@ -8,3 +8,7 @@
 /httpRequests/
 # Zeppelin ignored files
 /ZeppelinRemoteNotebooks/
+
+# 排除一些文件的上传
+**/.idea
+**/target/
