@@ -4,7 +4,9 @@ import com.imooc.grace.result.GraceJSONResult;
 import com.imooc.grace.result.IMOOCJSONResult;
 import com.imooc.grace.result.ResponseStatusEnum;
 import com.liepin.pojo.test.Stu;
+import com.liepin.service.StuService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("u")
 @Slf4j
 public class HelloController {
+
+    @Autowired
+    private StuService stuService;
+
+    @GetMapping("stu")
+    public Object stu() {
+
+        Stu stu = new Stu();
+//        stu.setId("1001");
+        stu.setAge(18);
+        stu.setName("慕课网 www.imooc.com");
+
+        stuService.save(stu);
+
+        return "OK";
+    }
+
 
     @GetMapping("hello")
     public Object hello() {
