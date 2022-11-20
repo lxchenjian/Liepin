@@ -50,7 +50,7 @@
 <!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
 <!--        </dependency>-->
 
-        <!-- lombok 插件工具 -->
+        <!-- lombok 插件工具   -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

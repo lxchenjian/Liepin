@@ -9,3 +9,9 @@ spring:
     active: dev
   banner:
     location: classpath:banner/banner.txt
+
+
+# 配置日志级别
+logging:
+  level:
+    root: info
