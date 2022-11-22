@@ -5,6 +5,8 @@ server:
     max-swallow-size: -1
 
 spring:
+  application:
+    name: user-service
   profiles:
     active: dev
   banner:
@@ -18,3 +20,7 @@ logging:
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*.xml
+  global-config:
+    db-config:
+      id-type: assign_id  # 主键
+    banner: false  # 去掉banner
