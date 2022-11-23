@@ -9,10 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Leipin-api" />
         <module name="Liepin-common" />
+        <module name="service-company-6001" />
         <module name="service-user-7001" />
         <module name="mybatis-plus-generator-for-imooc" />
         <module name="Liepin-pojo" />
-        <module name="service-company-6001" />
+        <module name="gateway-8000" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
       <module name="Leipin-api" options="-parameters" />
       <module name="Liepin-common" options="-parameters" />
       <module name="Liepin-pojo" options="-parameters" />
+      <module name="gateway-8000" options="-parameters" />
       <module name="service-company-6001" options="-parameters" />
       <module name="service-user-7001" options="-parameters" />
     </option>
