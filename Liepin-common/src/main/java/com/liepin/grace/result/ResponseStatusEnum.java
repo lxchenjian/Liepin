@@ -1,4 +1,4 @@
-package com.imooc.grace.result;
+package com.liepin.grace.result;
 
 /**
  * 响应结果枚举，用于提供给GraceJSONResult返回给前端的

@@ -1,4 +1,4 @@
-package com.imooc.grace.result;
+package com.liepin.grace.result;
 
 import java.util.Map;
 
