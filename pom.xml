@@ -22,6 +22,7 @@
         <module>service-company-6001</module>
         <module>mybatis-plus-generator-for-imooc</module>
         <module>gateway-8000</module>
+        <module>auth-service-8111</module>
     </modules>
 
     <!-- 打包方式: 1、jar(默认)
