@@ -1,10 +1,10 @@
 package com.liepin.controller;
 
-import com.alibaba.nacos.common.utils.IPUtil;
 import com.google.gson.Gson;
 import com.liepin.base.BaseInfoProperties;
 import com.liepin.grace.result.GraceJSONResult;
 import com.liepin.service.UsersService;
+import com.liepin.utils.IPUtil;
 import com.liepin.utils.JWTUtils;
 import com.liepin.utils.SMSUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -36,8 +36,9 @@ public class PassportController extends BaseInfoProperties {
         }
 
         // 获得用户ip
-        // 限制用户只能在60s以内获得一次验证码
-        redis.setnx60s(MOBILE_SMSCODE, mobile);
+        String userIp = IPUtil.getRequestIp(request);
+        // 限制用户只能在60s以内获得一次验证码  存在则不重新生成
+        redis.setnx60s(MOBILE_SMSCODE + ":" + userIp, mobile);
 
         String code = (int)((Math.random() * 9 + 1) * 100000) + "";
 //        smsUtils.sendSMS(mobile, code);
