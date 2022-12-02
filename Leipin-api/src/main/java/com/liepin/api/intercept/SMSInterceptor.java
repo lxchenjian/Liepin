@@ -26,6 +26,7 @@ public class SMSInterceptor extends BaseInfoProperties implements HandlerInterce
 
         if (ipExist) {
             log.error("短信发送频率太高了~~！！！");
+            //1、自定义异常。2、异常拦截器转换为response格式。3、代码整洁性：封装一层display
             GraceException.display(ResponseStatusEnum.SMS_NEED_WAIT_ERROR);
             return false;
         }
