@@ -3,7 +3,7 @@ package com.liepin.controller;
 import com.google.gson.Gson;
 import com.liepin.base.BaseInfoProperties;
 import com.liepin.grace.result.GraceJSONResult;
-import com.liepin.service.UsersService;
+import com.liepin.pojo.bo.RegistLoginBO;
 import com.liepin.utils.IPUtil;
 import com.liepin.utils.JWTUtils;
 import com.liepin.utils.SMSUtils;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.UUID;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("passport")
@@ -49,4 +49,18 @@ public class PassportController extends BaseInfoProperties {
 
         return GraceJSONResult.ok();
     }
+
+    @PostMapping("login")
+    public GraceJSONResult login(@Valid @RequestBody RegistLoginBO registLoginBO,
+                                 HttpServletRequest request) throws Exception {
+
+        String mobile = registLoginBO.getMobile();
+        String code = registLoginBO.getSmsCode();
+
+
+        return GraceJSONResult.ok();
+    }
+
+
+
 }
