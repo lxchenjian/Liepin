@@ -39,7 +39,7 @@ public class JWTTest {
 
         System.out.println(myJWT);
     }
-
+    //校验jwt
     @Test
     public void checkJWT() {
 
