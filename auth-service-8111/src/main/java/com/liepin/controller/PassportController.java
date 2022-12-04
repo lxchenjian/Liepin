@@ -1,6 +1,5 @@
 package com.liepin.controller;
 
-import com.google.gson.Gson;
 import com.liepin.base.BaseInfoProperties;
 import com.liepin.grace.result.GraceJSONResult;
 import com.liepin.grace.result.ResponseStatusEnum;
@@ -9,7 +8,6 @@ import com.liepin.pojo.bo.RegistLoginBO;
 import com.liepin.pojo.vo.UsersVO;
 import com.liepin.service.UsersService;
 import com.liepin.utils.IPUtil;
-import com.liepin.utils.JWTUtils;
 import com.liepin.utils.SMSUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -29,8 +27,7 @@ public class PassportController extends BaseInfoProperties {
     @Autowired
     private SMSUtils smsUtils;
 
-    @Autowired
-    private JWTUtils jwtUtils;
+
 
     @Autowired
     private UsersService usersService;

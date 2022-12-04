@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient  // 开启服务的注册与发现功能
-@MapperScan(basePackages = "com.imooc.mapper")
+@MapperScan(basePackages = "com.liepin.mapper")
 public class Application {
 
     public static void main(String[] args) {

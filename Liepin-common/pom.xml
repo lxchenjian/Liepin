@@ -85,7 +85,7 @@
         </dependency>
 
 
-        <!-- 引入JJWT的依赖 -->
+        <!-- 引入JJWT的依赖 ：引入jar -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>

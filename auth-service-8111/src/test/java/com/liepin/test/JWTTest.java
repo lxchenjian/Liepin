@@ -1,7 +1,7 @@
-package com.imooc.test;
+package com.liepin.test;
 
 import com.google.gson.Gson;
-import com.imooc.pojo.test.Stu;
+import com.liepin.pojo.test.Stu;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtParser;
