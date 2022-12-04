@@ -1,5 +1,6 @@
 package com.liepin.controller;
 
+import com.google.gson.Gson;
 import com.liepin.base.BaseInfoProperties;
 import com.liepin.grace.result.GraceJSONResult;
 import com.liepin.grace.result.ResponseStatusEnum;
@@ -8,6 +9,7 @@ import com.liepin.pojo.bo.RegistLoginBO;
 import com.liepin.pojo.vo.UsersVO;
 import com.liepin.service.UsersService;
 import com.liepin.utils.IPUtil;
+import com.liepin.utils.JWTUtils;
 import com.liepin.utils.SMSUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -27,7 +29,8 @@ public class PassportController extends BaseInfoProperties {
     @Autowired
     private SMSUtils smsUtils;
 
-
+    @Autowired
+    private JWTUtils jwtUtils;
 
     @Autowired
     private UsersService usersService;
@@ -76,9 +79,11 @@ public class PassportController extends BaseInfoProperties {
         }
 
         // 3. 保存用户token，分布式会话到redis中
-        String uToken = TOKEN_USER_PREFIX + SYMBOL_DOT + UUID.randomUUID().toString();
-        redis.set(REDIS_USER_TOKEN + ":" + user.getId(), uToken);
-
+//        String uToken = TOKEN_USER_PREFIX + SYMBOL_DOT + UUID.randomUUID().toString();
+//        redis.set(REDIS_USER_TOKEN + ":" + user.getId(), uToken);
+        String jwt = jwtUtils.createJWTWithPrefix(new Gson().toJson(user),
+//                                                    Long.valueOf(60 * 1000),
+                TOKEN_USER_PREFIX);
 
         // 4. 用户登录注册以后，删除redis中的短信验证码
         redis.del(MOBILE_SMSCODE + ":" + mobile);
@@ -86,7 +91,7 @@ public class PassportController extends BaseInfoProperties {
         // 5. 返回用户的信息给前端
         UsersVO usersVO = new UsersVO();
         BeanUtils.copyProperties(user, usersVO);
-        usersVO.setUserToken(uToken);
+        usersVO.setUserToken(jwt);
 
         return GraceJSONResult.ok(usersVO);
     }
